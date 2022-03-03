@@ -4,7 +4,7 @@
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-    const newWordArray = word.split (" ")
+    const newWordArray = word.split ("")
     const desordenadoArray = newWordArray.sort()
     console.log("Ejercicio 1")
     desordenadoArray.forEach(letra => {
@@ -34,7 +34,7 @@ let testWordsList = [
     "Chevere",
     "Meneo",
 ];
-
+console.log("Ejercicicio 2")
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
     const newWordList = wordsList.map(word => word.toLowerCase)
@@ -51,7 +51,8 @@ wordSearcherIgnoreCase(testTargetWordA, testWordsList);
 wordSearcherIgnoreCase(testTargetWordB, testWordsList);
 wordSearcherIgnoreCase(testTargetWordC, testWordsList);
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 /*Dado un arreglo de strings, retornar la palabra más larga,
 la más corta y el tamaño promedio, el arreglo debe ser
@@ -70,10 +71,19 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    const ordenadoArray = wordList.sort(function(a, b) {return b.length - a.length});
-    return {}
+    const ordenadoArray = wordsList.sort(function(a, b) {return b.length - a.length});
+    const tamañoArray = ordenadoArray.length
+    let sumatoriaPalabras = 0;
+    wordsList.forEach(word => {
+        sumatoriaPalabras += word.length
+        console.log(sumatoriaPalabras);
+    }) 
+    return {palabraLarga: ordenadoArray[0], palabaraCorta: ordenadoArray[tamañoArray-1], promedio :sumatoriaPalabras}
 }
+console.log("Ejercicio 3")
+console.log(wordLengthClassifier(testSampleList));
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
 
@@ -83,7 +93,11 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   // :)
+   const palabraDerecho = word.split("")
+   const palabraAlreves = word.split("").reverese()
+   if (parabraDerecho == palabraAlreves) {
+       
+   }
 }
 
 
@@ -128,7 +142,7 @@ function vocalsRemoverFromObject(objectMultiContainer) {
     // :)
 }
 
-console.log(vocalsRemoverFromObject(testObjMultiContainer));
+//console.log(vocalsRemoverFromObject(testObjMultiContainer));
 
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
 
