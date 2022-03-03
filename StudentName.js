@@ -4,9 +4,19 @@
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-   // :)
+    const newWordArray = word.split (" ")
+    const desordenadoArray = newWordArray.sort()
+    console.log("Ejercicio 1")
+    desordenadoArray.forEach(letra => {
+        console.log(letra)
+    })
+   
 }
 wordCutter(testWord);
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
@@ -27,10 +37,21 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-   // :)
+    const newWordList = wordsList.map(word => word.toLowerCase)
+
+   if (newWordList.includes(targetWord.toUpperCase())){
+       console.log("La palabra " + targetWord + " si está incluida")
+   }
+   else{
+    console.log("La palabra " + targetWord + " no está incluida")
+   }
 }
 
+wordSearcherIgnoreCase(testTargetWordA, testWordsList);
+wordSearcherIgnoreCase(testTargetWordB, testWordsList);
+wordSearcherIgnoreCase(testTargetWordC, testWordsList);
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 /*Dado un arreglo de strings, retornar la palabra más larga,
 la más corta y el tamaño promedio, el arreglo debe ser
@@ -49,7 +70,8 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    // :)
+    const ordenadoArray = wordList.sort(function(a, b) {return b.length - a.length});
+    return {}
 }
 
 
