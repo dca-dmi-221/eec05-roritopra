@@ -95,7 +95,11 @@ let onVerificationWordD = "Somos";
 function palindromeVerifier(word) {
    const palabraDerecho = word.split("")
    const palabraAlreves = word.split("").reverese()
-   if (parabraDerecho == palabraAlreves) {
+   if (palabraDerecho == palabraAlreves) {
+       console.log("La palabra " +  word + "si es un palíndromo")
+    }  
+    else {
+        console.log("La palabra " + word + "NO es palíndromo")
        
    }
 }
