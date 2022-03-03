@@ -6,7 +6,7 @@ let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
     const newWordArray = word.split ("")
     const desordenadoArray = newWordArray.sort()
-    console.log("Ejercicio 1")
+    console.log("*********Ejercicio 1**********")
     desordenadoArray.forEach(letra => {
         console.log(letra)
     })
@@ -34,7 +34,7 @@ let testWordsList = [
     "Chevere",
     "Meneo",
 ];
-console.log("Ejercicicio 2")
+console.log("*********Ejercicicio 2*********")
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
     const newWordList = wordsList.map(word => word.toLowerCase)
@@ -80,7 +80,7 @@ function wordLengthClassifier(wordsList) {
     }) 
     return {palabraLarga: ordenadoArray[0], palabaraCorta: ordenadoArray[tamañoArray-1], promedio :sumatoriaPalabras}
 }
-console.log("Ejercicio 3")
+console.log("*********Ejercicio 3*********")
 console.log(wordLengthClassifier(testSampleList));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -93,8 +93,8 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   const palabraDerecho = word.toLowerCase().split("")
-   const palabraAlreves = word.toLowerCase().split("").reverse()
+   const palabraDerecho = word.toLowerCase()
+   const palabraAlreves = word.toLowerCase().split("").reverse().join("")
 console.log(palabraDerecho)
 console.log(palabraAlreves)
 
@@ -106,6 +106,7 @@ console.log(palabraAlreves)
        
    }
 }
+console.log("*********Ejercicio 4*********")
 
 palindromeVerifier(onVerificationWordA);
 palindromeVerifier(onVerificationWordB);
@@ -114,13 +115,16 @@ palindromeVerifier(onVerificationWordD);
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
 let containerTestObject = {
     list:["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
 function lettersCounter(objectContainer) {
-   // :)
+   
+
 }
 
 
