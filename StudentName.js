@@ -93,18 +93,27 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   const palabraDerecho = word.split("")
-   const palabraAlreves = word.split("").reverese()
-   if (palabraDerecho == palabraAlreves) {
-       console.log("La palabra " +  word + "si es un palíndromo")
+   const palabraDerecho = word.toLowerCase().split("")
+   const palabraAlreves = word.toLowerCase().split("").reverse()
+console.log(palabraDerecho)
+console.log(palabraAlreves)
+
+   if (palabraDerecho === palabraAlreves) {
+       console.log("La palabra " +  word + " si es un palíndromo")
     }  
     else {
-        console.log("La palabra " + word + "NO es palíndromo")
+        console.log("La palabra " + word + " NO es palíndromo")
        
    }
 }
 
+palindromeVerifier(onVerificationWordA);
+palindromeVerifier(onVerificationWordB);
+palindromeVerifier(onVerificationWordC);
+palindromeVerifier(onVerificationWordD);
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
 let containerTestObject = {
