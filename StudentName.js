@@ -185,6 +185,10 @@ function anagramVerifier(wordToExplore, listOfWords) {
     console.log("*********Ejercicio 7*********")
     console.log(anagramVerifier(testWordToExplore, wordsToVerify));
 
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
 
@@ -194,10 +198,21 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
-}
+    let lists = objectMultiContainer.listA.concat(objectMultiContainer.listB);
+    for (let i = 0; i < lists.length; i++) {
+        lists[i] = lists[i].replace(/[aeiou]/g, '');        
+    }
 
-//console.log(vocalsRemoverFromObject(testObjMultiContainer));
+    console.log(lists);
+}
+console.log("*********Ejercicio 8*********")
+vocalsRemoverFromObject(testObjMultiContainer);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
 
