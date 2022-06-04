@@ -4,9 +4,19 @@
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-   // :)
+    const newWordArray = word.split ("")
+    const desordenadoArray = newWordArray.sort()
+    console.log("*********Ejercicio 1**********")
+    desordenadoArray.forEach(letra => {
+        console.log(letra)
+    })
+   
 }
 wordCutter(testWord);
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
@@ -24,11 +34,23 @@ let testWordsList = [
     "Chevere",
     "Meneo",
 ];
-
+console.log("*********Ejercicicio 2*********")
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-   // :)
+    const newWordList = wordsList.map(word => word.toLowerCase)
+
+   if (newWordList.includes(targetWord.toUpperCase())){
+       console.log("La palabra " + targetWord + " si está incluida")
+   }
+   else{
+    console.log("La palabra " + targetWord + " no está incluida")
+   }
 }
+
+wordSearcherIgnoreCase(testTargetWordA, testWordsList);
+wordSearcherIgnoreCase(testTargetWordB, testWordsList);
+wordSearcherIgnoreCase(testTargetWordC, testWordsList);
+
 
 
 
@@ -49,9 +71,19 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    // :)
+    const ordenadoArray = wordsList.sort(function(a, b) {return b.length - a.length});
+    const tamañoArray = ordenadoArray.length
+    let sumatoriaPalabras = 0;
+    wordsList.forEach(word => {
+        sumatoriaPalabras += word.length
+        console.log(sumatoriaPalabras);
+    }) 
+    return {palabraLarga: ordenadoArray[0], palabaraCorta: ordenadoArray[tamañoArray-1], promedio :sumatoriaPalabras}
 }
+console.log("*********Ejercicio 3*********")
+console.log(wordLengthClassifier(testSampleList));
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
 
@@ -61,8 +93,28 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   // :)
+   const palabraDerecho = word.toLowerCase()
+   const palabraAlreves = word.toLowerCase().split("").reverse().join("")
+console.log(palabraDerecho)
+console.log(palabraAlreves)
+
+   if (palabraDerecho === palabraAlreves) {
+       console.log("La palabra " +  word + " si es un palíndromo")
+    }  
+    else {
+        console.log("La palabra " + word + " NO es palíndromo")
+       
+   }
 }
+console.log("*********Ejercicio 4*********")
+
+palindromeVerifier(onVerificationWordA);
+palindromeVerifier(onVerificationWordB);
+palindromeVerifier(onVerificationWordC);
+palindromeVerifier(onVerificationWordD);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*Dado un objeto que contiene una lista de palabras contar el
@@ -71,8 +123,26 @@ let containerTestObject = {
     list:["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
 function lettersCounter(objectContainer) {
-   // :)
+   let vocales =  0
+   let consonantes = 0
+   objectContainer.list.forEach(word => {
+       word.toLowerCase().split("").forEach(letra => {
+           if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+               vocales += 1
+           }
+           else{
+               consonantes += 1
+           }
+       })
+   })
+    return [vocales,consonantes]
 }
+
+console.log("*********Ejercicio 5*********")
+console.log(lettersCounter(containerTestObject))
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
@@ -80,8 +150,16 @@ let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
 
 function arrayJoiner(listA, listB) {
- // :)
+    let juntarArreglos = listA.concat(listB);
+    return juntarArreglos
+ 
 }
+
+console.log("*********Ejercicio 6*********")
+console.log(arrayJoiner(wordArrayA,wordArrayB))
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
@@ -90,9 +168,26 @@ son anagramas de una palabra base (recibida como parámetro), retorne las posici
 let testWordToExplore = "amar";
 let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "ramon", "omar"];
 
+
 function anagramVerifier(wordToExplore, listOfWords) {
-   // :)
-}
+    let posicionesAnagrama = []
+        listOfWords.forEach((word,num) => {
+            const palabraArrayOrdenada = word.split("").sort().join("")
+            const palabraMetodoOrdenada = wordToExplore.split("").sort().join("")
+            if (palabraArrayOrdenada === palabraMetodoOrdenada) {
+                posicionesAnagrama.push(num)
+            }
+
+        })
+        return posicionesAnagrama
+    }
+
+    console.log("*********Ejercicio 7*********")
+    console.log(anagramVerifier(testWordToExplore, wordsToVerify));
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
@@ -103,10 +198,21 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
-}
+    let lists = objectMultiContainer.listA.concat(objectMultiContainer.listB);
+    for (let i = 0; i < lists.length; i++) {
+        lists[i] = lists[i].replace(/[aeiou]/g, '');        
+    }
 
-console.log(vocalsRemoverFromObject(testObjMultiContainer));
+    console.log(lists);
+}
+console.log("*********Ejercicio 8*********")
+vocalsRemoverFromObject(testObjMultiContainer);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
 
